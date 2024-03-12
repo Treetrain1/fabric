@@ -37,6 +37,7 @@ import net.minecraft.datafixer.DataFixTypes;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 
+import net.fabricmc.fabric.api.datafixer.v1.SchemaRegistry;
 import net.fabricmc.loader.api.entrypoint.EntrypointContainer;
 
 public final class FabricDataFixesInternalsImpl extends FabricDataFixesInternals {
@@ -124,20 +125,20 @@ public final class FabricDataFixesInternalsImpl extends FabricDataFixesInternals
 	}
 
 	@Override
-	public void registerBlockEntities(Map<String, Supplier<TypeTemplate>> registry, Schema schema) {
+	public void registerBlockEntities(SchemaRegistry registry) {
 		List<DataFixerEntrypoint> entrypoints = getEntrypoints();
 
 		for (DataFixerEntrypoint entrypoint : entrypoints) {
-			entrypoint.onRegisterBlockEntities(registry, schema);
+			entrypoint.onRegisterBlockEntities(registry);
 		}
 	}
 
 	@Override
-	public void registerEntities(Map<String, Supplier<TypeTemplate>> registry, Schema schema) {
+	public void registerEntities(SchemaRegistry registry) {
 		List<DataFixerEntrypoint> entrypoints = getEntrypoints();
 
 		for (DataFixerEntrypiont entrypoint : entrypoints) {
-			entrypoint.onRegisterEntities(registry, schema);
+			entrypoint.onRegisterEntities(registry);
 		}
 	}
 

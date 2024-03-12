@@ -40,6 +40,7 @@ import net.minecraft.datafixer.Schemas;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 
+improt net.fabricmc.fabric.api.datafixer.v1.SchemaRegistry;
 import net.fabricmc.loader.api.ModContainer;
 import net.fabricmc.loader.api.metadata.CustomValue;
 
@@ -123,9 +124,9 @@ public abstract class FabricDataFixesInternals {
 
 	public abstract NbtCompound addModDataVersions(NbtCompound nbt);
 
-	public abstract void registerBlockEntities(Map<String, Supplier<TypeTemplate>> registry, Schema schema);
+	public abstract void registerBlockEntities(SchemaRegistry registry);
 
-	public abstract void registerEntities(Map<String, Supplier<TypeTemplate>> registry, Schema schema);
+	public abstract void registerEntities(SchemaRegistry registry);
 
 	public abstract void freeze();
 

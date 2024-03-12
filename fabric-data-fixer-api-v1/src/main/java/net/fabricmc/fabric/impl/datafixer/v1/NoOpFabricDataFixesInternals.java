@@ -35,6 +35,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 
 import net.fabricmc.fabric.api.datafixer.v1.EmptySchema;
+import net.fabricmc.fabric.api.datafixer.v1.SchemaRegistry;
 
 public final class NoOpFabricDataFixesInternals extends FabricDataFixesInternals {
 	// From QSL.
@@ -70,11 +71,11 @@ public final class NoOpFabricDataFixesInternals extends FabricDataFixesInternals
 	}
 
 	@Override
-	public void registerBlockEntities(Map<String, Supplier<TypeTemplate>> registry, Schema schema) {
+	public void registerBlockEntities(SchemaRegistry registry) {
 	}
 
 	@Override
-	public void registerEntities(Map<String, Supplier<TypeTemplate>> registry, Schema schema) {
+	public void registerEntities(SchemaRegistry registry) {
 	}
 
 	@Override
